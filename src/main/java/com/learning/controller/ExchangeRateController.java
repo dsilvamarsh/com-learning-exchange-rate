@@ -1,6 +1,8 @@
 package com.learning.controller;
 
+import com.learning.respostiory.ExchangeRateRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +14,11 @@ import java.util.Map;
 @RestController
 @RequestMapping
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ExchangeRateController {
 
-    @GetMapping(path = "/exchange-rate")
+    //private final ExchangeRateRepository repo;
+    @GetMapping(path = "/rate")
     public ResponseEntity<Map<String,String>> getExchangeRate(String fromCurrency,String toCurrency){
         return ResponseEntity.ok(Map.of("rate","1.5"));
     }

@@ -20,6 +20,7 @@ public class ExchangeRateController {
     //private final ExchangeRateRepository repo;
     @GetMapping(path = "/rate")
     public ResponseEntity<Map<String,String>> getExchangeRate(String fromCurrency,String toCurrency){
+        log.debug("Fetching records for From {} to {} currency ",fromCurrency,toCurrency);
         return ResponseEntity.ok(Map.of("rate","1.5"));
     }
 

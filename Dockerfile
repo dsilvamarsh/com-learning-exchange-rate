@@ -9,4 +9,3 @@ COPY ${JAR_FILE} app.jar
 
 # Define the command to run when the container starts
 ENTRYPOINT ["java","-jar","/app.jar"]
-EXPOSE 8083
